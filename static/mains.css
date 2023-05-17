@@ -1,0 +1,862 @@
+@import url("https://fonts.googleapis.com/css2?family=Candal&family=Handlee&family=Indie+Flower&family=Lora:wght@700&family=Rowdies&family=Rubik+Bubbles&family=Rubik+Gemstones&family=Rubik+Spray+Paint&family=Titan+One&family=Yeon+Sung&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  background: #f1f0fc;
+  font-family: "Lora", serif;
+}
+
+header {
+  background: url("../static/9.jpg") no-repeat center / cover;
+  /* background: #a665fc; */
+  height: 66px;
+  /* color: white; */
+}
+header * {
+  color: white;
+}
+
+header .logo {
+  float: left;
+  height: inherit;
+  margin-left: 2em;
+}
+
+header .logo-text {
+  margin: 9px;
+  font-family: "candal", "sans-serif";
+}
+
+header .logo-text span {
+  color: #13e3f7;
+}
+
+header ul {
+  float: right;
+  /* border: 21px solid red; */
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  height: inherit;
+  /* overflow: hidden; */
+  /* border: 1px solid red; */
+}
+
+header ul li {
+  float: left;
+  position: relative;
+  /* border: 1px solid red; */
+}
+
+header ul li a {
+  display: block;
+  padding: 20px;
+  font-size: 1.3em;
+  text-decoration: none;
+  height: inherit;
+}
+
+header ul li a:hover {
+  /* background: #6a27b6; */
+  background: #47079c;
+  transition: 0.5s;
+}
+
+header ul li ul {
+  position: absolute;
+  top: 66px;
+  right: 0px;
+  width: 180px;
+  display: none;
+}
+
+header ul li:hover ul {
+  display: block;
+}
+
+header ul li ul li {
+  width: 100%;
+  z-index: 10;
+}
+
+header ul li ul li a {
+  padding: 10px;
+  background: white;
+  color: #575656;
+}
+header ul li ul li a:hover {
+  color: red;
+}
+header ul li ul li a:hover {
+  background: #d8d4d4;
+}
+
+/* --------------------------------------Recent posts--------------------------------------- */
+
+.content-area {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../static/pp12.jpeg") no-repeat center/cover;
+  display: flex;
+  /* border: 1px solid blue; */
+  min-height: 90vh;
+  position: relative;
+  overflow: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 30px auto 30px;
+  align-items: center;
+  position: relative;
+  min-height: 75vh;
+}
+
+.head-nav {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 80px;
+  /* margin: 20px; */
+  /* margin: 10px; */
+
+  display: inline-block;
+  /* border: 1px solid gold; */
+}
+.head-nav a {
+  height: 50px;
+  font-size: 1.4rem;
+  font-weight: 900;
+  margin: 15px;
+  padding: 10px;
+  color: black;
+  display: inline-block;
+  text-decoration: none;
+  /* border: 2px solid black; */
+  box-shadow: 2px 2px 2px 2px gray;
+  background: rgb(233, 233, 233);
+  cursor: pointer;
+}
+.head-nav a:hover {
+  background: wheat;
+  box-shadow: 3px 3px 3px 3px rgb(78, 78, 78);
+  transition: 0.5s;
+}
+
+.nof {
+  text-align: center;
+  /* border: 1px solid red; */
+  color: #ffffff;
+  top: 230px;
+  position: absolute;
+  width: 800px;
+  right: 250px;
+  font-family: "Rubik Bubbles", cursive;
+  font-size: 2rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #00ebfc;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+/* ---------------------------------Posts------------------------------------ */
+.allposts {
+  /* background: url("../static/pp12.jpg") no-repeat center/cover; */
+  background: transparent;
+  position: absolute;
+  top: 80px;
+  width: 97%;
+  min-height: 700px;
+}
+
+.posts {
+  /* left: 20px; */
+  /* position: relative; */
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+  width: 100%;
+  max-height: 270px;
+  border-radius: 0px;
+  background: white;
+  /* border: 1px solid red; */
+  box-shadow: 0px 5px 15px brown;
+}
+
+.posts:hover {
+  box-shadow: 5px 5px 15px #8706ff;
+}
+
+.posts img {
+  width: 40%;
+  height: 270px;
+  float: left;
+  margin: 0%;
+  /* border: 1px solid yellowgreen; */
+}
+
+.post-preview {
+  width: 60%;
+  padding: 0px;
+  float: right;
+  margin-left: 5px;
+  /* border: 1px solid red; */
+  position: relative;
+  height: 270px;
+}
+.post-preview h1 {
+  /* border: 1px solid red; */
+  display: absolute;
+  top: 0px;
+  max-height: 80px;
+  overflow: hidden;
+  margin: 0px;
+}
+.preview-text {
+  position: absolute;
+  /* border: 1px solid red; */
+  top: 100px;
+  max-height: 100px;
+  max-width: 870px;
+  overflow: hidden;
+}
+.intr {
+  position: absolute;
+  font-size: 1.7rem;
+  bottom: 0px;
+}
+.intr a {
+  color: gray;
+  margin-left: 4px;
+}
+/* #lk {
+  color: red;
+} */
+.cmnt {
+  color: gray;
+  cursor: pointer;
+}
+
+.lk:hover {
+  color: red;
+}
+
+.cmnt:hover {
+  color: rgb(63, 62, 62);
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+
+  background: transparent;
+  color: rgb(116, 20, 196);
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  cursor: pointer;
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  font-weight: 600;
+  font-size: 1.15rem;
+  box-shadow: 1.2px 1.2px 1.2px 1.2px grey;
+}
+
+.btn:hover {
+  /* background: #4a1e85; */
+  background: #6939a7;
+  box-shadow: 2px 2px 1.8px 2px rgb(80, 79, 79);
+  transition: 0.5s;
+  color: white;
+}
+
+/* .pandc {
+  position: absolute;
+} */
+
+/* -------------------------------Post-Blogs------------------------------------ */
+
+.postBlog {
+  top: 80px;
+  /* left: 20px; */
+  font-family: "Rubik Bubbles", "cursive";
+  color: wheat;
+  position: absolute;
+  width: 80%;
+  height: 71vh;
+  left: 10%;
+  margin-top: 10px;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../static/pb1.jpeg") no-repeat center/cover;
+  /* border: 1px solid red; */
+  padding: 30px;
+  font-size: 1.7rem;
+}
+/* .postBlog label {
+  color: white;
+} */
+
+/* .postBlog input {
+  height: 30px;
+  margin: 10px;
+  width: 200px;
+} */
+.pp {
+  /* border: 1px solid green; */
+  display: flex;
+  flex-direction: row;
+  margin: 10px 20px 10px;
+  position: relative;
+  min-height: 35px;
+}
+
+.pp input {
+  font-size: 1.3rem;
+  margin-left: 10px;
+  font-family: "Rubik Bubbles", "cursive";
+}
+.pp textarea {
+  font-size: 1.3rem;
+  margin-left: 10px;
+  resize: none;
+  color: rgb(255, 252, 247);
+  background: transparent;
+  box-shadow: 2px 1.8px 2px 4px white;
+}
+#pt {
+  width: 763px;
+  margin-left: 93px;
+}
+
+#ppp {
+  width: 764px;
+  margin-left: 43px;
+}
+
+#pc {
+  width: 764px;
+  font-size: 1rem;
+}
+
+#pi {
+  position: absolute;
+  left: 380px;
+}
+
+#pb {
+  position: absolute;
+  left: 453px;
+  cursor: pointer;
+}
+
+#pb:hover {
+  background: rgb(53, 52, 52);
+  color: white;
+  box-shadow: 4px 4px 8px rgb(248, 234, 206);
+}
+
+/* ---------------------------------------Profile-------------------------------------------- */
+
+.profile {
+  position: relative;
+  min-height: 30vh;
+  border: 1px solid red;
+  margin: 0px;
+  height: 250px;
+  background: url("../static/pp13.jpeg") no-repeat center/cover;
+}
+.profilePic {
+  width: 180px;
+  height: 180px;
+  border: 1px solid blue;
+  margin: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profilePic img {
+  width: 100%;
+  height: 100%;
+}
+
+.pid {
+  border: 0px solid white;
+  position: absolute;
+  left: 240px;
+  top: 75px;
+  color: white;
+  font-family: "Rubik Gemstones", cursive;
+
+  padding: 5px;
+  height: 37px;
+  width: 220px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.pname {
+  border: 0px solid white;
+  position: absolute;
+  left: 240px;
+  font-family: "Rubik Gemstones", cursive;
+  top: 125px;
+  color: white;
+  padding: 5px;
+  height: 65px;
+  width: 220px;
+  text-align: center;
+  font-size: 1.5rem;
+  overflow: hidden;
+}
+.pabout {
+  border: 0px solid white;
+  position: absolute;
+  left: 240px;
+  font-family: "Handlee", cursive;
+  /* top: 140px; */
+  bottom: 7px;
+  color: white;
+  padding: 5px;
+  height: 40px;
+  width: 850px;
+  /* text-align: center; */
+  font-size: 1.5rem;
+  overflow: hidden;
+}
+.data {
+  font-family: "Rubik Spray Paint", cursive;
+  display: inline-block;
+  position: absolute;
+  /* border: 1px solid red; */
+  top: 90px;
+  right: 120px;
+  width: 800px;
+  overflow: hidden;
+}
+.data span {
+  display: inline-block;
+  color: rgb(212, 212, 212);
+  /* border: 1px solid white; */
+  border: transparent;
+  font-size: 1.5rem;
+  padding: 10px;
+  text-align: center;
+  margin: 10px 50px;
+}
+
+.data span:hover {
+  color: white;
+  /* text-shadow: 1px 1px gray; */
+}
+/* .data span:nth-child(1):hover {
+  box-shadow: 2px 2px 4px #f5f5f5;
+  font-size: 1.6rem;
+}
+.data span:nth-child(2):hover {
+  box-shadow: 2px 2px 4px #f5f5f5;
+  font-size: 1.6rem;
+}
+.data span:nth-child(3):hover {
+  box-shadow: 2px 2px 4px #f5f5f5;
+  font-size: 1.6rem;
+} */
+.edit {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  padding: 10px;
+  /* border: 1px solid green; */
+}
+.edit:hover {
+  background: #e2dfdf;
+}
+
+.edit a {
+  color: wheat;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.edit a:hover {
+  color: #333131;
+}
+
+.myposts {
+  /* border: 2px solid red; */
+  min-height: 40px;
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../static/pp6.jpeg") no-repeat center/cover;
+}
+
+/* ----------------------------------Edit Profile-------------------------------------- */
+
+.editp {
+  /* border: 1px solid red; */
+  min-height: 70vh;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../static/pp14.jpeg") no-repeat center/cover;
+}
+.editprofile {
+  /* border: 1px solid red; */
+  min-height: 78vh;
+  margin: 55px 200px 29px;
+  position: relative;
+  font-size: 1.5rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../static/pp7.jpeg") no-repeat center/cover;
+  /* text-align: center; */
+}
+.pform {
+  /* border: 1px solid red; */
+  position: absolute;
+  width: 70%;
+  left: 160px;
+  margin: 0px;
+  height: 100%;
+}
+.editprofile form {
+  /* border: 1px solid green; */
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.editprofile label {
+  color: wheat;
+  margin: 40px;
+}
+.editprofile input {
+  /* border: 1px solid blue; */
+  padding: 10px;
+  font-size: 1.5rem;
+  margin: 20px;
+  width: 500px;
+  font-family: "Yeon Sung", cursive;
+  /* text-align: center; */
+}
+
+#btn {
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 5px;
+  margin: 10px;
+  width: 140px;
+  border-radius: 60px;
+  left: 320px;
+  font-weight: 900;
+}
+
+/* ---------------------------------Search-Userid---------------------------------------- */
+
+.search {
+  /* margin: 20px;
+  width: 700px; */
+  /* border: 1px solid red; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  position: relative;
+  min-height: 90vh;
+  min-width: 700px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../static/pp13.jpeg") no-repeat center/cover;
+}
+
+.popup {
+  position: absolute;
+  text-align: center;
+  /* top: 10px; */
+  /* left: 370px;
+  width: 770px; */
+  display: fixed;
+  /* justify-content: center; */
+  /* border: 1px solid red; */
+  max-height: 60px;
+  /* border-radius: 60px; */
+  overflow: hidden;
+  /* background: transparent; */
+  width: 100%;
+}
+
+.searcharea {
+  position: absolute;
+  /* border: 1px solid blue; */
+  top: 80px;
+  left: 400px;
+  width: 700px;
+  display: flex;
+  justify-content: center;
+  border-radius: 60px;
+  padding: 0px;
+  background: rgb(224, 224, 224);
+  overflow: hidden;
+  max-height: 50px;
+  box-shadow: 1px 1px 2px grey;
+}
+.searcharea:hover {
+  box-shadow: 1px 1px 2px rgb(54, 53, 53);
+}
+.searchbox input {
+  width: 630px;
+  /* border: 1px solid rebeccapurple; */
+  height: 100%;
+  background: transparent;
+  border: 0px;
+  outline: 0px;
+  margin-left: 10px;
+  font-size: 1.4rem;
+}
+.searchbox button {
+  width: 40px;
+  /* border: 1px solid rebeccapurple; */
+  margin: 0px;
+  height: 100%;
+  font-size: 1.5rem;
+  border: 0px;
+  outline: 0px;
+  padding: 0px;
+  background: transparent;
+}
+.search-result {
+  position: absolute;
+  /* border: 1px solid green; */
+  bottom: 0px;
+  top: 150px;
+  width: 700px;
+  left: 400px;
+  /* margin: 50px; */
+}
+.search-result ul {
+  /* border: 1px solid red; */
+  list-style: none;
+  height: 100%;
+  overflow: auto;
+}
+.search-result ul li {
+  /* border: 1px solid green; */
+  margin: 10px 0px;
+  height: 40px;
+  font-size: 1.6rem;
+  font-family: "Titan One", cursive;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #47079c;
+
+  color: white;
+}
+
+.lst {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #47079c;
+  text-decoration: none;
+  color: white;
+}
+
+.sbt {
+  font-size: 1.4rem;
+  float: right;
+  margin-right: 25px;
+  text-decoration: none;
+  display: block;
+  border-radius: 30px;
+  width: 120px;
+  font-family: "Rubik Spray Paint", cursive;
+  text-align: center;
+  /* padding: 2px; */
+  color: #47079c;
+
+  background: #f5f2f2;
+  -webkit-text-stroke-width: 0px;
+  /* -webkit-text-stroke-color: black; */
+}
+
+.sbt:hover {
+  box-shadow: 1px 1px 2px #d0bfe6;
+}
+
+#fl:hover {
+  color: green;
+}
+#ufl:hover {
+  color: red;
+}
+
+/*------------------------------- Folowers-Following Page---------------------------------- */
+.follows {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../static/pp10.jpeg") no-repeat center/cover;
+  /* border: 1px solid red; */
+  min-height: 90vh;
+  /* height: 90%; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.follows ul {
+  /* border: 1px solid blue; */
+  position: relative;
+  width: 700px;
+  min-height: 70vh;
+  list-style: none;
+  color: #f5f2f2;
+
+  /* display: flex;
+  flex-direction: row; */
+}
+
+.follows li {
+  font-size: 1.5rem;
+  /* border: 1px solid green; */
+  /* position: absolute; */
+  width: 90%;
+  margin-top: 20px;
+  font-weight: bold;
+  color: white;
+  font-family: "Titan One", cursive;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #cd06ff;
+}
+.lbt {
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #cd06ff;
+  text-decoration: none;
+}
+
+.fbt {
+  font-size: 1.4rem;
+  float: right;
+  margin-right: 25px;
+  text-decoration: none;
+  display: block;
+  border-radius: 30px;
+  width: 120px;
+  font-family: "Rubik Spray Paint", cursive;
+  text-align: center;
+  /* padding: 2px; */
+  color: #0f5c63;
+  font-weight: normal;
+
+  background: #e6e4e4;
+  -webkit-text-stroke-width: 0px;
+  /* -webkit-text-stroke-color: black; */
+}
+
+.fbt:hover {
+  box-shadow: 1px 1px 2px #d0bfe6;
+}
+
+/* --------------------------------------------blogs------------------------------------- */
+
+.ffblog {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../static/pb2.jpeg") no-repeat center/cover;
+  /* border: 1px solid red; */
+  width: 100%;
+  min-height: 90vh;
+  overflow: auto;
+  position: relative;
+}
+.tbg {
+  /* border: 1px solid blue; */
+  color: wheat;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  /* font-family: "Yeon Sung", cursive; */
+  font-family: "Rowdies", cursive;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #fc7100;
+}
+
+.eng,
+.hmm {
+  color: black;
+  display: block;
+  position: absolute;
+  top: 100px;
+  /* border: 1px solid red; */
+  font-size: 1.2rem;
+  background: #9891a5;
+  box-shadow: 0px 2px 6px #00e8fd;
+}
+
+.eng {
+  left: 10px;
+}
+.hmm {
+  right: 10px;
+}
+.eng a,
+.hmm a {
+  font-family: "Rubik Bubbles", cursive;
+  color: black;
+  text-decoration: none;
+}
+.eng a:hover {
+  background: #555252;
+  color: #d8d4d4;
+}
+.hmm a:hover {
+  background: #555252;
+  color: #d8d4d4;
+}
+
+.cbg {
+  color: #9922f3;
+  /* border: 1px solid green; */
+  top: 140px;
+  position: absolute;
+  padding: 20px;
+  font-size: 1.4rem;
+  font-family: "Yeon Sung", cursive;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #faf8f5;
+}
+
+/*------------------------------- post-engagement--------------------------------- */
+.engage {
+  /* border: 1px solid #ff0000; */
+  position: relative;
+  min-height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+}
+.engage img {
+  display: block;
+  position: absolute;
+  left: 450px;
+  top: 20px;
+  /* border: 1px solid rebeccapurple; */
+  box-shadow: 0px 5px 15px #00ebfc;
+}
+
+.bck {
+  text-decoration: none;
+  display: block;
+  color: azure;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  /* font-weight: 800; */
+  font-size: 1.5rem;
+  font-family: "Rubik Spray Paint", cursive;
+  border-radius: 20px;
+  box-shadow: 0px 2px 6px #5ce7ff;
+  padding: 8px;
+}
+.bck:hover {
+  background: #3b3a3a;
+}

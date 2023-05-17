@@ -1,0 +1,13 @@
+{% extends "user_home.html" %} {% block title %} user-profile {% endblock %} {%
+block content %}
+<div class="ffblog">
+  <div class="tbg">
+    <h1>{{bt|safe }}</h1>
+  </div>
+  <div class="eng">
+    <a href="/blogengage/{{bgid}}">Post-Engagement</a>
+  </div>
+  <div class="hmm"><a href="/user/home">Home</a></div>
+  <div class="cbg">{{ bc|safe }}</div>
+</div>
+{% endblock %}

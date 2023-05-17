@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block link %} {% endblock %}
+    <!-- Font-Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link rel="stylesheet" href="/static/mains.css" />
+    <title>{% block title %} User Home {% endblock %}</title>
+  </head>
+  <body>
+    <!-- <h1>Helllo</h1>
+    Welcome {{current_user.id}}
+    <a href="/logout">logout</a>
+    <a href="/user/profile">profile</a>
+    <a href="/user/editProfile">editprofile</a>
+    <a href="">addBlog</a> -->
+    <header>
+      <div class="logo">
+        <h1 class="logo-text"><span>Blog</span>Lite</h1>
+      </div>
+      <ul>
+        <li><a href="/user/home">Home</a></li>
+        <li>
+          <a href="#">Search</a>
+          <ul style="left: 0px">
+            <li><a href="/search/username">By User-Name</a></li>
+            <li><a href="/search/fullname">By Full-name </a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="/profile/{{ current_user.id }}">
+            <!-- <i class="fa fa-search" style="color: white; font-size: 0.8em"></i> -->
+            <!-- <i class="fa fa-magnifying-glass"></i> -->
+            Profile
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="fa fa-user"></i>
+            {{current_user.user_name}}
+            <i class="fa fa-chevron-down" style="font-size: 0.8em"></i>
+          </a>
+          <ul>
+            <li><a href="/delete/user">Delete-user</a></li>
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+    {% block content %}
+
+    <div class="content-area">
+      <div class="content">
+        <div class="head-nav">
+          <!-- <input type="submit" value="Recent Posts" />
+        <input id="post" type="submit" value="Post-Blog" /> -->
+          <a href="/user/home"> Recent Posts </a>
+          <a href="/user/postBlog"> Post-Blog </a>
+        </div>
+        {% block innercontent %} {% endblock %}
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

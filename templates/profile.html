@@ -1,0 +1,134 @@
+{% extends "user_home.html" %} {% block title %} user-profile {% endblock %} {%
+block content %}
+
+<div class="profile">
+  <div class="profilePic">
+    <img src="../static/profile/{{dp}}" alt="" />
+  </div>
+<div class="pid">
+   {{unm}}
+</div>
+<div class="pname">
+  {% if fn %}
+    {{fn}}
+    {% endif %}
+</div>
+<div class="pabout">
+  {% if ab %}
+  {{ab}}
+  {% endif %}
+</div>
+
+<div class="data">
+    <a href="#"><span> Total posts <br>{{tp}} </span> </a>
+    {% if id == current_user.id %}
+    <a href="/user/followers"><span> Followers <br>{{flwr}} </span></a>
+    <a href="/user/following"><span> Following <br> {{flwng}}</span></a>
+    {% else %}
+    <a href="#"><span> Followers <br>{{flwr}} </span></a>
+    <a href="#"><span> Following <br> {{flwng}}</span></a>
+    {% endif %}
+</div>
+{% if id == current_user.id %}
+<div class="edit">
+    <a href="/user/editProfile">Edit Profile </a>
+</div>  
+{% endif %}
+</div>
+
+<div class="myposts" style="min-height: 377px; overflow: auto;">
+     {% if blgs %}
+     {% for blg in blgs %}
+     
+    <div class="posts">
+      <!-- <input  type="checkbox" class="chk" aria-hidden="true" />
+      <div class="content">
+      <div class="p"> -->
+        <img src="/static/blogs/{{blg['Blog_img']}}" alt="Post Image" class="post-image" />
+        <div class="post-preview">
+          <h1>
+              {{blg['Blog_title']|safe }}
+          </h1>
+          <div class="info"  style="position: absolute; font-size:1.2rem; top: 85px">
+          <a href="#" style="text-decoration: none; color: black"><i class="far fa-user">
+            {{blg['user_name']}} </i> </a>
+          &nbsp;
+          <i class="far calendar">{{blg['Blog_time'].strftime("%d %B %Y")}}</i> </div>
+          <p class="preview-text">
+            {{blg['Blog_preview']|safe }}
+          </p>
+          <div class="intr">
+            {{blg['likes']}}<a href="/likeBlog/{{blg['id']}}" class="lk"><i class="fa fa-thumbs-up"> </i></a>
+            {{blg['dislikes']}}<a href="/dislikeBlog/{{blg['id']}}" class="lk"><i class="fa fa-thumbs-down"> </i></a>
+            {{blg['total_comments']}}<a href="/comment/{{blg['id']}}" class="cmnt"><i class="fa fa-comment"></i></a>
+            {% if id == current_user.id %}
+            <a href="/editBlog/{{blg['id']}}" class="cmnt"><i class="fa fa-pen"> </i></a>
+            <a href="/deleteBlog/{{blg['id']}}" class="lk"><i class="fa fa-trash"> </i></a>
+            {% endif %}
+          </div>
+          
+          <a href="/blog/{{blg['id']}}" class="btn">Read More</a>
+        </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+      <!-- </div> -->
+        <!-- <div class="c">
+          
+
+          <label for="chk" class="tb" aria-hidden="true"> back </label>
+        </div> -->
+        <!-- </div> -->
+      
+
+    
+        
+
+       <!-- <div class="posts">
+        <img src="../static/no-img1.jpeg" alt="Post Image" class="post-image" />
+        <div class="post-preview">
+          <h1>
+            
+              The strongest man alive on the earth intreact with cosmos</a
+            >
+          </h1>
+          <a href="#"><i class="far fa-user">
+            User ID </i> </a>
+          &nbsp;
+          <i class="far calendar">Mar 11, 2023</i>
+          <p class="preview-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nobis
+            non cum a ipsum, facilis ut libero culpa tenetur aliquam
+            perspiciatis odio neque dolore id obcaecati, dolorum unde, mollitia
+            sunt. hhcnjhdklhcnvrfojneirojgvfnheirohv nevbjkfjvf i ijge irjfer
+            hfrio fiojf w
+          </p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </div>
+      <div class="posts">
+        <img src="../static/no-img2.jpeg" alt="Post Image" class="post-image" />
+        <div class="post-preview">
+          <h1>
+           
+              The strongest man alive on the earth intreact with cosmos</a
+            >
+          </h1>
+          <a href="#"><i class="far fa-user">
+            User ID </i> </a>
+          &nbsp;
+          <i class="far calendar">Mar 11, 2023</i>
+          <p class="preview-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nobis
+            non cum a ipsum, facilis ut libero culpa tenetur aliquam
+            perspiciatis odio neque dolore id obcaecati, dolorum unde, mollitia
+            sunt. hhcnjhdklhcnvrfojneirojgvfnheirohv nevbjkfjvf i ijge irjfer
+            hfrio fiojf w
+          </p>
+          <a href="#" class="btn">Read More</a>
+        </div> -->
+
+    </div> 
+</div>
+
+{%endblock%}

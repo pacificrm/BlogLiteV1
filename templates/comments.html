@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link rel="stylesheet" href="/static/comments.css" />
+    <title>Comments</title>
+  </head>
+  <body>
+    <div class="comments">
+      <a class="bck" href="/user/home"> Back </a>
+
+      <div class="inputarea">
+        <form method="POST">
+          <textarea name="comment" cols="75" rows="4"></textarea>
+          <input type="submit" value="Comment" />
+          <!-- <i class="fa fa-paper-plane"></i> -->
+        </form>
+      </div>
+      <div class="showarea">
+        <span class="ut">
+
+          {% if cmnts %}
+          {% for cmnt in cmnts %}
+        <div class="comment">
+          <i class="far fa-user"> </i> {{cmnt['user_name']}} {{cmnt['comment_time']}} 
+          {% if cmnt['user_name'] == current_user.user_name %}
+          <a style="color: aliceblue;" href="/deletecmn/{{cmnt['id']}}"><i style="float: right;" class="fa fa-trash"></i> </a> {% endif %} <br /> </span>
+          {{cmnt['comment']}}
+        </div>  
+        {% endfor %} 
+        {% endif %}    
+      </div>
+    </div>
+  </body>
+</html>

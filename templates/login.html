@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../static/login_signup.css" />
+    <title>Login_Signup</title>
+  </head>
+  <body id="bd">
+    <div id="popup">
+      {% with messages=get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages%}
+      <div
+        class="alert alert-{{ category }} alert-dismissible fade show"
+        role="alert"
+      >
+        {{ message }}
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+      {% endfor %} {% endif %} {% endwith %}
+    </div>
+
+    <div id="main">
+      <input class="out" type="checkbox" id="ck" aria-hidden="true" />
+
+      <!--                         SIGNUP PAGE                    -->
+
+      <div class="signup">
+        <form method="Post">
+          <label class="lb" for="ck" aria-hidden="true">Sign up</label>
+          <input
+            class="out"
+            type="text"
+            name="user_nm"
+            placeholder="Enter User Name*"
+            required
+          />
+          <input
+            class="out"
+            type="email"
+            name="signup_mail"
+            placeholder="Enter Email Id*"
+            required
+          />
+          <input
+            class="out"
+            type="password"
+            name="signup_pswd1"
+            placeholder="Enter Password*"
+            required
+          />
+          <input
+            class="out"
+            type="password"
+            name="signup_pswd2"
+            placeholder="Confirm Password*"
+            required
+          />
+          <button type="submit" class="tk">Sign up</button>
+        </form>
+      </div>
+
+      <!--                         LOGIN PAGE                            -->
+
+      <div class="login">
+        <form method="Post">
+          <label class="lb" for="ck" aria-hidden="true">Login</label>
+          <input
+            class="out"
+            type="email"
+            name="login_mail"
+            placeholder="Email Id"
+            required
+          />
+          <input
+            class="out"
+            type="password"
+            name="login_pswd"
+            placeholder="Password"
+            required
+          />
+          <button type="submit" class="tk">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

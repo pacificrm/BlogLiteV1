@@ -1,0 +1,80 @@
+{% extends "user_home.html" %} {% block title %} user-profile {% endblock %} {%
+block content %}
+<div class="editp">
+  <div class="editprofile">
+    <div class="pform">
+      <form
+        action="http://127.0.0.1:5000/user/editProfile"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        {% if fn %}
+        <label for="fullname">Name :</label>
+        <input
+          value="{{fn}}"
+          type="text"
+          name="fullname"
+          maxlength="10"
+          placeholder="Enter your full name"
+          required
+        />
+        <br />
+        {% else %}
+        <label for="fullname">Name :</label>
+        <input
+          type="text"
+          name="fullname"
+          placeholder="Enter your full name"
+          required
+        />
+        <br />
+        {% endif %} {% if ab %}
+        <label for="about">About :</label>
+        <input
+          value="{{ab}}"
+          type="text"
+          name="about"
+          maxlength="10"
+          placeholder="Enter about yourself"
+          required
+        />
+        <br />
+
+        {% else %}
+        <label for="about">About :</label>
+        <input
+          type="text"
+          name="about"
+          placeholder="Enter about yourself"
+          required
+        />
+        <br />
+        {% endif %}
+        <label for="email">Email :</label>
+        <input
+          style="color: black"
+          type="email"
+          name="email"
+          value="{{em}}"
+          disabled
+        />
+        <br />
+        <label for="User_id">User-Id :</label>
+        <input
+          type="text"
+          style="color: black"
+          name="user_name"
+          value="{{un}}"
+          disabled
+        />
+        <br />
+        <label for="profilepic">Profile-Pic :</label>
+        <input style="color: wheat" type="file" name="dp" />
+        <br />
+        <input type="submit" id="btn" value="update" />
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

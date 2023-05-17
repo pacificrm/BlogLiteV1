@@ -1,0 +1,51 @@
+{% extends "user_home.html" %} {% block title %} Recent Posts {% endblock %} {%
+block innercontent %}
+
+<div class="allposts">
+  {% if blgs %} {% for blg in blgs %}
+  <div class="posts">
+    <!-- <input  type="checkbox" class="chk" aria-hidden="true" />
+        <div class="content">
+        <div class="p"> -->
+    <img
+      src="/static/blogs/{{blg['Blog_img']}}"
+      alt="Post Image"
+      class="post-image"
+    />
+    <div class="post-preview">
+      <h1>{{blg['Blog_title']|safe }}</h1>
+
+      <div
+        class="info"
+        style="position: absolute; font-size: 1.2rem; top: 85px"
+      >
+        <a
+          style="text-decoration: none; color: black"
+          href="/profile/{{blg['user_id']}}"
+          ><i class="far fa-user"> {{blg['user_name']}} </i>
+        </a>
+        &nbsp;
+        <i class="far calendar">{{blg['Blog_time']}}</i>
+      </div>
+
+      <p class="preview-text">{{blg['Blog_preview']|safe }}</p>
+      <div class="intr">
+        {{blg['likes']}}<a href="/hlikeBlog/{{blg['id']}}" class="lk"
+          ><i class="fa fa-thumbs-up"> </i
+        ></a>
+        {{blg['dislikes']}}<a href="/hdislikeBlog/{{blg['id']}}" class="lk"
+          ><i class="fa fa-thumbs-down"> </i
+        ></a>
+        {{blg['total_comments']}}<a href="/comment/{{blg['id']}}" class="cmnt"
+          ><i class="fa fa-comment"></i
+        ></a>
+      </div>
+
+      <a href="/blog/{{blg['id']}}" class="btn">Read More</a>
+    </div>
+  </div>
+  {% endfor %} {% else %}
+  <div class="nof">No feeds follow some users to see their Blogs.</div>
+  {% endif %}
+</div>
+{%endblock%}

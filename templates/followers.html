@@ -1,0 +1,20 @@
+{% extends "user_home.html" %} {% block title %} user-profile {% endblock %} {%
+block content %}
+
+<div class="follows">
+      {% if flwr %}
+      <ul>
+       {% for i in flwr %}
+            <li>
+           <a class="lbt"href="/profile/{{i[0]}}"> {{i[1]}} </a>
+            <a class="fbt" href="/flunfollow/{{i[0]}}" id="ufl"> Unfollow </a>
+        <a  class="fbt" href="/flfollow/{{i[0]}}" id="fl"> Follow </a>
+    </li>
+       {% endfor %}
+    </ul> {% endif
+      %}
+    </div>
+  </div>
+</div>
+
+{%endblock%}

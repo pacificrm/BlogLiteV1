@@ -1,0 +1,46 @@
+{% extends "user_home.html" %} {% block title %} Post-Blog {% endblock %} {%
+block innercontent %}
+
+<div class="postBlog">
+  <form
+    action="http://127.0.0.1:5000/user/postBlog"
+    enctype="multipart/form-data"
+    method="POST"
+  >
+    <div class="pp">
+      <label for="blogTitle" maxlength="80"> Blog Title</label>
+      <!-- <input id="pt" type="textarea" name="postTitle" required /> -->
+      <textarea name="blogTitle" id="pt" cols="65" rows="1" required></textarea>
+    </div>
+    <div class="pp">
+      <label for="blogPreview"> Blog preview </label>
+      <!-- <input id="ppp" type="textarea" name="postPreview" required /> -->
+      <textarea
+        name="blogPreview"
+        id="ppp"
+        cols="62"
+        rows="3"
+        required
+      ></textarea>
+    </div>
+    <div class="pp">
+      <label for="blogContent"> Write Your Blog </label>
+      <!-- <input id="pc" type="textarea" name="postContent" required /> -->
+      <textarea
+        name="blogContent"
+        cols="56"
+        id="pc"
+        rows="11"
+        required
+      ></textarea>
+    </div>
+    <div class="pp">
+      <input id="pi" type="file" name="blogImage" />
+    </div>
+    <div class="pp">
+      <input id="pb" type="submit" value="Post-Blog" />
+    </div>
+  </form>
+</div>
+
+{%endblock%}

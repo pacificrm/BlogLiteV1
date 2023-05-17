@@ -1,0 +1,82 @@
+{% extends "user_home.html" %} {% block link %}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+/>
+{% endblock %} {% block title %} user-profile {% endblock %} {% block content %}
+
+<div class="search">
+  <div class="popup">
+    {% with messages=get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages%}
+    <div
+      class="alert alert-{{ category }} alert-dismissible fade show"
+      role="alert"
+    >
+      {{ message }}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
+  </div>
+
+  <div class="searcharea">
+    <form class="searchbox" action="" method="POST">
+      <input type="text" name="uid" placeholder="Search....." required />
+      <!-- <input type="submit" value="search" /> -->
+      <button type="submit"><i class="fas fa-search"></i></button>
+      <i class="fa fa-magnifying-glass"></i>
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </form>
+  </div>
+
+  <div class="search-result">
+    {% if lu %}
+    <ul>
+      {% for i in lu %}
+      <li>
+        <a class="lst" href="/profile/{{i['id']}}">{{ i['user_name'] }} </a>
+        {% if i['id'] != current_user.id %} {% if f %}
+        <a class="sbt" href="/funfollow/{{i['id']}}" id="ufl"> unfollow </a>
+        <a class="sbt" href="/ffollow/{{i['id']}}" id="fl"> follow </a>
+        {% else %}
+        <a class="sbt" href="/nunfollow/{{i['id']}}" id="ufl"> unfollow </a>
+        <a class="sbt" href="/nfollow/{{i['id']}}" id="fl"> follow </a>
+        {% endif %}
+      </li>
+      {% endif %} {% endfor %}
+    </ul>
+    {% endif %} {% if l %}
+    <ul>
+      {% for i in l %}
+      <li>
+        <a class="lst" href="/profile/{{i['user_id']}}">{{ i['fullname'] }} </a>
+        {% if i['id'] != current_user.id %} {% if f %}
+        <a class="sbt" href="/funfollow/{{i['user_id']}}" id="ufl">
+          unfollow
+        </a>
+        <a class="sbt" href="/ffollow/{{i['user_id']}}" id="fl"> follow </a>
+        {% else %}
+        <a class="sbt" href="/nunfollow/{{i['user_id']}}" id="ufl">
+          unfollow
+        </a>
+        <a class="sbt" href="/nfollow/{{i['user_id']}}" id="fl"> follow </a>
+        {% endif %}
+      </li>
+      {% endif %} {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</div>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+  crossorigin="anonymous"
+></script>
+
+{% endblock %}
